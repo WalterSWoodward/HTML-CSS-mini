@@ -1,88 +1,50 @@
-body {
-    margin: 10px;
-    padding: 0;
-  }
-  /* This is the main heading "Header" which we want centered */
-  h1 {
-    display: block;
-    border: solid black;
-    text-align: center;
-    margin: 0;
-    /* Bottom of border set to 0px, to avoid 6px border where h1 lines up with h2 */
-    border-width: 3px 3px 0px 3px
-  }
-  /* Properties set for ALL div classes so you do not have to repeat code */
-  div {
-    /* So that each side will together fill the whole screen */
-    width: 50%;
-    /* Ensures proper spacing between borders and text */
-    /* To have the h3 box right up against the border, right padding must be 0px */
-    padding: 15px 0px 15px 15px;
-    /* Elimates height, width, and padding from calc of final width and height */
-    box-sizing: border-box;
-    /* One way to overwrite the problem of browser default space between divs */
-    float: left;
-    
-    border: 3px solid black;
-  }
-  /* Stumped on how to get the modal even with h2 */
-  #modal {
-    background-color: grey;
-    /* position: absolute right 0; */
-    text-align: center;
-    vertical-align: middle;
-    width: 60px;
-    border-width: 0px;
-    margin: 1px;
-    line-height: 40px;
-    height: 40px;
-    float: right;
-    padding: 0px 0px 0px 0px
-}
-  /* Properties specific to left div class */
-  .left {
-    border-left: 3px solid black;
-    border-right: 1.5px solid black;
-  }
-  /* Properties specific to right div class */
-  .right {
-    border-left: 1.5px solid black;
-    border-right: 3px solid black;
-  }
-  
-  h2 {
-    /* Not sure why this works??? */
-    display: inline-block;
-  }
-  
-  /* h3 {
-    margin-right: 1px;
-    background-color: rgba(119, 118, 118, 0.932);
-    padding: 10px 0px 10px 10px;
-    float: right;
-  } */
-  
-  p {
-    /* Adds padding to right, which was absent because of the h3 needing to be flush with right side border */
-    padding-right: 15px;
-  }
-  
-  /* Media Queries */
-  @media (max-width: 600px) {
-  
-    div {
-      width: 100%;
-      float: none;
-    }
-  
-    .left {
-      border-width: 3px 3px 1.5px 3px;
-    }
-  
-    .right {
-      border-width: 1.5px 3px 3px 3px;
-    }  
-  
-  }
+/* Can't figure out why there is a space between the h1 selector and the div content??? */
 
-  
+body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+h1 {
+  text-align: center;
+  border:3px solid black;
+  width: 100%;
+  padding
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div {
+  width: 50%;
+  min-width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-grow: 2;
+  padding: 15px 0 15px 15px;
+  box-sizing: border-box;
+  border: 3px solid black; 
+}
+
+div:left {
+  border-width: 3px 1.5px 3px 3px;
+}
+
+div:right {
+  border-width: 3px 3px 3px 1.5px;
+}
+
+h3 {
+  background-color: white;
+  padding: 10px;
+}
+
+  p {
+      padding-right: 15px;
+      }
